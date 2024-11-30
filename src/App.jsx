@@ -187,7 +187,7 @@ function Model({ url, onHotspotClick, ...props }) {
             scale={blackHoodie3Object.scale}
           >
             <Html>
-              <BlackHoodie onClick={onHotspotClick} />
+              <Atlanta onClick={onHotspotClick} />
             </Html>
           </mesh>
         )}
@@ -200,7 +200,7 @@ function Model({ url, onHotspotClick, ...props }) {
             scale={atlantaObject.scale}
           >
             <Html>
-              <Atlanta onClick={onHotspotClick} />
+              <BlackHoodie onClick={onHotspotClick} />
             </Html>
           </mesh>
         )}
