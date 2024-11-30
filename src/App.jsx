@@ -12,6 +12,7 @@ import MooneyWorld from './assets/MooneyWorld';
 import CreamTea from './assets/CreamTea';
 import BlackHoodie from './assets/BlackHoodie';
 import Atlanta from './assets/Atlanta';
+import Black from './assets/Black';
 
 
 const status = tunnel();
@@ -200,7 +201,7 @@ function Model({ url, onHotspotClick, ...props }) {
             scale={atlantaObject.scale}
           >
             <Html>
-              <BlackHoodie onClick={onHotspotClick} />
+              <Black onClick={onHotspotClick} />
             </Html>
           </mesh>
         )}
