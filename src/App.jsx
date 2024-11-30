@@ -8,6 +8,10 @@ import tunnel from 'tunnel-rat';
 import Hotspot from './assets/hotspot';
 import CHotspot from './assets/hotspot_Cap';
 import Potspot from './assets/hotspot_pic';
+import MooneyWorld from './assets/MooneyWorld';
+import CreamTea from './assets/CreamTea';
+import BlackHoodie from './assets/BlackHoodie';
+import Atlanta from './assets/Atlanta';
 
 
 const status = tunnel();
@@ -63,6 +67,12 @@ function Model({ url, onHotspotClick, ...props }) {
   const shirtObject = scene.getObjectByName('Shirt');
   const capObject = scene.getObjectByName('Cap');
   const picObject = scene.getObjectByName('Plane027');
+  const moonyworldObject = scene.getObjectByName('Cube082');
+  const creamObject = scene.getObjectByName('Cube013');
+  const blackHoodieObject = scene.getObjectByName('Cube016');
+  const moony2HoodieObject = scene.getObjectByName('Cube081');
+  const atlantaObject = scene.getObjectByName('Cube005');
+  const blackHoodie3Object = scene.getObjectByName('Cube009');
 
   return (
     <>
@@ -105,7 +115,98 @@ function Model({ url, onHotspotClick, ...props }) {
             <Potspot onClick={onHotspotClick} />
           </Html>
         </mesh>
-      )}
+
+)}
+        {moonyworldObject && (
+          <mesh
+            position={new THREE.Vector3().setFromMatrixPosition(moonyworldObject.matrixWorld)}
+            rotation={moonyworldObject.rotation}
+            scale={moonyworldObject.scale}
+          >
+            <Html>
+              <MooneyWorld onClick={onHotspotClick} />
+            </Html>
+          </mesh>
+        )}
+
+        {/* Hotspot for Cap */}
+        {creamObject && (
+          <mesh
+            position={new THREE.Vector3().setFromMatrixPosition(creamObject.matrixWorld)}
+            rotation={creamObject.rotation}
+            scale={creamObject.scale}
+          >
+            <Html>
+              <CreamTea onClick={onHotspotClick} />
+            </Html>
+          </mesh>
+        )}
+
+        {/* Hotspot for Cap */}
+        {blackHoodieObject && (
+          <mesh
+            position={new THREE.Vector3().setFromMatrixPosition(blackHoodieObject.matrixWorld)}
+            rotation={blackHoodieObject.rotation}
+            scale={blackHoodieObject.scale}
+          >
+            <Html>
+              <BlackHoodie onClick={onHotspotClick} />
+            </Html>
+          </mesh>
+        )}
+
+        {moony2HoodieObject && (
+          <mesh
+            position={new THREE.Vector3().setFromMatrixPosition(moony2HoodieObject.matrixWorld)}
+            rotation={moony2HoodieObject.rotation}
+            scale={moony2HoodieObject.scale}
+          >
+            <Html>
+              <MooneyWorld onClick={onHotspotClick} />
+            </Html>
+          </mesh>
+        )}
+
+{atlantaObject && (
+          <mesh
+            position={new THREE.Vector3().setFromMatrixPosition(atlantaObject.matrixWorld)}
+            rotation={atlantaObject.rotation}
+            scale={atlantaObject.scale}
+          >
+            <Html>
+              <MooneyWorld onClick={onHotspotClick} />
+            </Html>
+          </mesh>
+        )}
+
+
+{blackHoodie3Object && (
+          <mesh
+            position={new THREE.Vector3().setFromMatrixPosition(blackHoodie3Object.matrixWorld)}
+            rotation={blackHoodie3Object.rotation}
+            scale={blackHoodie3Object.scale}
+          >
+            <Html>
+              <BlackHoodie onClick={onHotspotClick} />
+            </Html>
+          </mesh>
+        )}
+
+
+{atlantaObject && (
+          <mesh
+            position={new THREE.Vector3().setFromMatrixPosition(atlantaObject.matrixWorld)}
+            rotation={atlantaObject.rotation}
+            scale={atlantaObject.scale}
+          >
+            <Html>
+              <Atlanta onClick={onHotspotClick} />
+            </Html>
+          </mesh>
+        )}
+
+
+     
     </>
   );
 }
