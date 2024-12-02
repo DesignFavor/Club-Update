@@ -20,8 +20,6 @@ const status = tunnel();
 
 export default function App() {
 
-
-  // Toggle the visibility of the Product component when hotspot is clicked
   const handleHotspotClick = () => {
    
   };
@@ -33,7 +31,7 @@ export default function App() {
         gl={{
           outputEncoding: THREE.sRGBEncoding,
           toneMapping: THREE.AgxToneMapping,
-          toneMappingExposure: 1, // Adjust exposure for desired brightness
+          toneMappingExposure: 1, 
         }}
       >
         <PerspectiveCamera makeDefault fov={55} position={[0, 0.5, 3]} />
@@ -66,7 +64,7 @@ export default function App() {
 function Model({ url, onHotspotClick, ...props }) {
   const { scene } = useGLTF(url);
 
-  // Find the Shirt and Cap objects
+
   const shirtObject = scene.getObjectByName('Shirt');
   const capObject = scene.getObjectByName('Cap');
   const picObject = scene.getObjectByName('Plane027');
@@ -81,7 +79,7 @@ function Model({ url, onHotspotClick, ...props }) {
     <>
       <primitive object={scene} {...props} />
 
-      {/* Hotspot for Shirt */}
+
       {shirtObject && (
         <mesh
           position={new THREE.Vector3().setFromMatrixPosition(shirtObject.matrixWorld)}
@@ -94,7 +92,7 @@ function Model({ url, onHotspotClick, ...props }) {
         </mesh>
       )}
 
-      {/* Hotspot for Cap */}
+
       {capObject && (
         <mesh
           position={new THREE.Vector3().setFromMatrixPosition(capObject.matrixWorld)}
@@ -107,7 +105,7 @@ function Model({ url, onHotspotClick, ...props }) {
         </mesh>
       )}
 
-        {/* Hotspot for Cap */}
+
         {picObject && (
         <mesh
           position={new THREE.Vector3().setFromMatrixPosition(picObject.matrixWorld)}
@@ -132,7 +130,6 @@ function Model({ url, onHotspotClick, ...props }) {
           </mesh>
         )}
 
-        {/* Hotspot for Cap */}
         {creamObject && (
           <mesh
             position={new THREE.Vector3().setFromMatrixPosition(creamObject.matrixWorld)}
@@ -145,7 +142,6 @@ function Model({ url, onHotspotClick, ...props }) {
           </mesh>
         )}
 
-        {/* Hotspot for Cap */}
         {blackHoodieObject && (
           <mesh
             position={new THREE.Vector3().setFromMatrixPosition(blackHoodieObject.matrixWorld)}
