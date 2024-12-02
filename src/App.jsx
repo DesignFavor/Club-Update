@@ -1,6 +1,7 @@
 import { Suspense, useState } from 'react';
 import { Canvas } from '@react-three/fiber';
 import { useGLTF, OrbitControls, Html, PerspectiveCamera, Environment } from '@react-three/drei';
+import { SSR, EffectComposer, Bloom } from '@react-three/postprocessing';
 
 import * as THREE from 'three';
 
@@ -40,13 +41,14 @@ export default function App() {
     
         <group position={[0, -3, -3]}>
           <Suspense >
-            <Model url='./assets/pool.gltf' onHotspotClick={handleHotspotClick} />
+            <Model url='./model/club.gltf' onHotspotClick={handleHotspotClick} />
           </Suspense>
           <Environment files="./envy.hdr"/>
         </group>
 
-
-
+<EffectComposer>
+<Bloom  intensity={0.01} />
+</EffectComposer>
         <OrbitControls
           enableZoom={true}
           minDistance={2}
